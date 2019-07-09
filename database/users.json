@@ -1,1 +1,0 @@
-[{"_id":{"$oid":"5d234450e7344541cb30ac47"},"nom":"nicoh","adresse":"nantes","tel":"0123456789","description":"test","__v":0},{"_id":{"$oid":"5d2344cee7344541cb30ac48"},"nom":"max","adresse":"nantes","tel":"9876543210","description":"plop","__v":0},{"_id":{"$oid":"5d244a0958c36414512a2e46"},"__v":0},{"_id":{"$oid":"5d244a3f58c36414512a2e47"},"__v":0}]

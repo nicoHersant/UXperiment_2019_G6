@@ -1,29 +1,21 @@
 version: '2'
 
 services:
-  mongodb:
+  mongo:
     image: mongo:latest
-    container_name: mongosun
-    #working_dir: /var/www/html/imie/enedis/
+    container_name: mongo
     volumes:
       - ./data/db:/data/db
     ports:
-      - 27017:27017
-    #environment:
-      #- MONGO_LOG_DIR=/dev/log
-    network_mode: "bridge"
-    #command: mongod --logpath=/dev/null && mongoimport --db sunshare --collection datas --file /dev/datas.json
+      - "27017:27017"
   sunshare:
-    image: owncloudci/nodejs
+    build: .
     container_name: sunshare
-    restart: always
-    #working_dir: /var/www/html/imie/enedis/
-    external_links:
-      - mongosun
+    depends_on:
+      - mongo
     environment:
       - ENV=DEV
     ports:
       - "3000:3000"
     volumes:
-      - .:/var/www/html/enedis/
-    network_mode: "bridge"
+      - .:/app

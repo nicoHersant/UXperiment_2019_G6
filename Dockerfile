@@ -7,15 +7,16 @@ WORKDIR /app
 #expose port 3000 to mount it to another port in local machine
 EXPOSE 3000
 
+# install package.json modules in container
+COPY package.json package.json
+RUN npm install
+
 #copy everything to container /app
 COPY . .
-
-# install package.json modules in container
-RUN npm install
 
 # install nodemon for changes on the fly
 RUN npm install -g nodemon
 RUN npm update
 
 # start server inside container
-CMD [ "nodemon", "index.js" ]
+CMD [ "node", "app.js" ]

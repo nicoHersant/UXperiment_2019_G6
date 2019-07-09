@@ -3,13 +3,13 @@
 var express = require('express');
 // Nous définissons ici les paramètres du serveur.
 var hostname = 'localhost';
-var port = 1234;
+var port = 3000;
 // La variable mongoose nous permettra d'utiliser les fonctionnalités du module mongoose.
 var mongoose = require('mongoose');
 // options pour une connexion à la base
 var options = { useNewUrlParser: true };
 //URL de notre base
-var urlmongo = "mongodb://localhost:27017/sunshare";
+var urlmongo = "mongodb://mongo:27017/sunshare";
 // Nous connectons l'API à notre base de données
 mongoose.connect(urlmongo, options);
 var db = mongoose.connection;
