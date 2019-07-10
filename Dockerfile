@@ -10,13 +10,10 @@ EXPOSE 3000
 # install package.json modules in container
 COPY package.json package.json
 RUN npm install
+RUN npm update
 
 #copy everything to container /app
 COPY . .
-
-# install nodemon for changes on the fly
-RUN npm install -g nodemon
-RUN npm update
 
 # start server inside container
 CMD [ "node", "app.js" ]

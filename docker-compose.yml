@@ -16,6 +16,6 @@ services:
     environment:
       - ENV=DEV
     ports:
-      - "3000:3000"
+      - "127.0.0.1:7777:3000"
     volumes:
       - .:/app

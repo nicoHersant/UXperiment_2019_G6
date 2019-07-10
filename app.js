@@ -2,7 +2,7 @@
 //La variable express nous permettra d'utiliser les fonctionnalités du module Express.
 var express = require('express');
 // Nous définissons ici les paramètres du serveur.
-var hostname = 'localhost';
+var hostname = '0.0.0.0';
 var port = 3000;
 // La variable mongoose nous permettra d'utiliser les fonctionnalités du module mongoose.
 var mongoose = require('mongoose');
@@ -133,6 +133,7 @@ myRouter.route('/users/:user_id')
 // Routes des Datas, les relevés d'énergies
 myRouter.route('/datas')
 .get(function(req,res){
+  console.log('test');
 	Data.find(function(err, datas){
         if (err){
             res.send(err);
