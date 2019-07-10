@@ -126,14 +126,13 @@ myRouter.route('/users/:user_id')
         if (err){
             res.send(err);
         }
-        res.json({message:"Bravo, user supprimée"});
+        res.json({message:"Bravo, utilisateur supprimée"});
     });
 });
 
 // Routes des Datas, les relevés d'énergies
 myRouter.route('/datas')
 .get(function(req,res){
-  console.log('test');
 	Data.find(function(err, datas){
         if (err){
             res.send(err);
