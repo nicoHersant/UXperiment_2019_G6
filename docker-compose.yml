@@ -9,7 +9,7 @@ services:
     ports:
       - "27017:27017"
   sunshare:
-    build: .
+    image: nicohkptn/sunshare
     container_name: sunshare
     depends_on:
       - mongo
